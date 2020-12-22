@@ -1,0 +1,7 @@
+[
+  { "id": 1, "text": "React" },
+  { "id": 2, "text": "Node" },
+  { "id": 3, "text": "Express" },
+  { "id": 4, "text": "MongoDB" },
+  { "id": 5, "text": "JavaScript" }
+]
