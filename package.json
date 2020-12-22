@@ -1,8 +1,10 @@
 {
-  "name": "react-ajax",
+  "name": "react",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "React skill들을 연습하는 공간입니다.",
+  "keywords": [
+    "react"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "react": "17.0.0",
