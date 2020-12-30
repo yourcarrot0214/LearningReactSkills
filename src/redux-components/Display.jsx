@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import store from "../setup/reduxStore";
+import store from "../redux-setup/reduxStore";
 
 const Display = () => {
   const [Number, setNumber] = useState(store.getState().number);

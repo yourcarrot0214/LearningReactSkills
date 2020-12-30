@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import store from "../setup/reduxStore";
 
-const Counter = () => {
-  const [Size, setSize] = useState(0);
+const Counter = (props) => {
+  const [Size, setSize] = useState(1);
 
   const getSize = (event) => {
     setSize(Number(event.currentTarget.value));
   };
 
   const increaseNumber = () => {
-    store.dispatch({ type: "INCREASE", number: Size });
+    return props.increase(Size);
   };
-
   const decreaseNumber = () => {
-    store.dispatch({ type: "DECREASE", number: Size });
+    return props.decrease(Size);
   };
 
   return (
@@ -21,9 +19,14 @@ const Counter = () => {
       <h2>Counter Component</h2>
       <button onClick={increaseNumber}>INCREASE</button>
       <button onClick={decreaseNumber}>DECREASE</button>
-      <input type="text" onChange={getSize} />
+      <input type="text" value={Size} onChange={getSize} />
     </div>
   );
 };
 
 export default Counter;
+
+/*
+  Redux에 종속된 기능들을 CounterContainer로 옮겨서
+  Counter component의 재사용 가능성을 보장합니다.
+*/

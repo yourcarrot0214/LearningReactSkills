@@ -5,7 +5,7 @@ import "./styles.css";
 // import App from "./App";
 
 // Redux
-import ReduxExample from "./components/ReduxExample";
+import ReduxExample from "./redux-components/ReduxExample";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
