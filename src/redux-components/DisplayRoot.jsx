@@ -1,11 +1,11 @@
 import React from "react";
-import Display from "./Display";
+import DisplayContainer from "../redux-containers/DisplayContainer";
 
 const DisplayRoot = () => {
   return (
     <div className="component">
       <h2>DisplayRoot Component</h2>
-      <Display />
+      <DisplayContainer />
     </div>
   );
 };
