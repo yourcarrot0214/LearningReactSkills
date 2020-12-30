@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Counter = (props) => {
+  console.log(props);
   const [Size, setSize] = useState(1);
 
   const getSize = (event) => {
@@ -8,10 +9,10 @@ const Counter = (props) => {
   };
 
   const increaseNumber = () => {
-    return props.increase(Size);
+    return props.onClick.increaseNumber(Size);
   };
   const decreaseNumber = () => {
-    return props.decrease(Size);
+    return props.onClick.decreaseNumber(Size);
   };
 
   return (

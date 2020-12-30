@@ -1,5 +1,18 @@
-import React, { useState } from "react";
 import Display from "../redux-components/Display";
+import { connect } from "react-redux";
+
+// react-redux code
+function mapReduxStateToReactProps(state) {
+  return {
+    number: state.number
+  };
+}
+
+export default connect(mapReduxStateToReactProps)(Display);
+
+/*
+// redux code
+import React, { useState } from "react";
 import store from "../redux-setup/reduxStore";
 
 export default function () {
@@ -9,6 +22,7 @@ export default function () {
   });
   return <Display number={Number} />;
 }
+*/
 
 /*
   Display component가 가지고 있던 state와 subscribe 기능을

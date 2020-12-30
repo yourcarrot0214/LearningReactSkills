@@ -1,6 +1,26 @@
+import Counter from "../redux-components/Counter";
+import { connect } from "react-redux";
+
+// react-redux code
+function mapDispatchToProps(dispatch) {
+  const increaseNumber = (size) => {
+    dispatch({ type: "INCREASE", number: size });
+  };
+  const decreaseNumber = (size) => {
+    dispatch({ type: "DECREASE", number: size });
+  };
+
+  return {
+    onClick: { increaseNumber, decreaseNumber }
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Counter);
+
+/*
+// redux code
 import React from "react";
 import store from "../redux-setup/reduxStore";
-import Counter from "../redux-components/Counter";
 
 export default function () {
   const increaseNumber = (size) => {
@@ -14,6 +34,7 @@ export default function () {
 
   return <Counter increase={increaseNumber} decrease={decreaseNumber} />;
 }
+*/
 
 /*
   Counter component의 Redux에 종속된 기능을 CounterContainer component로 옮깁니다.
